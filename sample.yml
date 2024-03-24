@@ -1,0 +1,10 @@
+- name: checking
+  Hosts: tomcat
+  Become: False
+  Tasks:
+  - name: ping
+  ansible.builtin.ping:
+   Hosts: 54.237.249.82
+  - name: ping exe
+  ansible.builtin.ping:
+  msg: "pinging localhost"
