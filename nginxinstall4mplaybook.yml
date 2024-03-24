@@ -10,4 +10,19 @@
     ansible.builtin.service:
       name:  nginx
       state: started
+
+- name: cart install
+  hosts: cart
+  tasks:
+  - name: nodejs install
+    ansible.builtin.package:
+     name: nodejs
+     state: present
+  - name: nodejs
+    ansible.builtin.service:
+     name: nodejs
+     state: started
+
+
+
    
