@@ -1,24 +1,24 @@
-- name: nginx install and Run
+- name: PLAY-1 nginx install and Run
   hosts:  web
   become: true
   tasks:
-  - name: install nginx
+  - name: TASK-1 install nginx
     ansible.builtin.package:
       name: nginx
       state: present
-  - name: Run nginx
+  - name: TASK-2 Run nginx
     ansible.builtin.service:
       name:  nginx
       state: started
 
-- name: cart install
+- name: PLAY-2 cart install
   hosts: cart
   tasks:
-  - name: nodejs install
+  - name: PLAY-2-Task-1 nodejs install
     ansible.builtin.package:
-     name: nodejs
+     name:  nodejs
      state: present
-  - name: nodejs
+  - name: PLAY-2-Task-2-nodejs service
     ansible.builtin.service:
      name: nodejs
      state: started
