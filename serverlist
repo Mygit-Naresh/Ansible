@@ -2,7 +2,7 @@
 webserver1.example.com
 webserver2.example.com
 webserver3.example.com
-192.0.6.45
+192.0.40.40
 
 [databases]
 database1.example.com
