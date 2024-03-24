@@ -1,4 +1,4 @@
-- name: Installing nginx from playbook YAML
+- name: nginx
   hosts: web
   become: true
   tasks: 
