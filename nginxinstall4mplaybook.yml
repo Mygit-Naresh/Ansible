@@ -1,7 +1,8 @@
-- name: nginx
+- name: nginx install
   hosts: web
   become: true
   tasks: 
+   name: nginx
    ansible.builtin.yum:
    state: present
    
