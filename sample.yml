@@ -1,6 +1,5 @@
-- name: ping checking
-  hosts: 54.237.249.82
-  Become: False
+- name: ping playbook
+  hosts: web
   tasks:
-   ansible.builtin.ping:
-   msg: "pinging localhost"
+  - name: ping the server
+    ansible.builtin.ping:

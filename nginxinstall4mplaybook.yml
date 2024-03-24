@@ -1,0 +1,9 @@
+- name: Installing nginx from playbook YAML
+  hosts: web
+  become: true
+  tasks: 
+  ansible.builtin.package
+  - name: nginx
+    state: present
+    name: nginx
+    service: started
