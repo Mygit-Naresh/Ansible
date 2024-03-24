@@ -2,8 +2,8 @@
   hosts: web
   become: true
   tasks: 
-  ansible.builtin.package:
-  name: nginx
-  state: present
-  name: nginx
-  service: started
+   ansible.builtin.yum:
+   name: nginx
+   state: present
+   name: nginx
+   service: started
