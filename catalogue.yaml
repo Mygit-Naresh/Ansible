@@ -24,8 +24,10 @@
       mode: '0440'
   - name: Extract /tmp/catalogue.zip into /app
     ansible.builtin.unarchive:
-      src:  catalogue.zip
-      dest: /app/catalogue
+      src:   /tmp/catalogue.zip
+      dest:  /app
+      remote_src: yes
+
   - name: "Install packages based on package.json"
     npm:
       path: /app
