@@ -36,14 +36,18 @@
       src: catalogue.service
       dest: /etc/systemd/system/catalogue.service
   - name: "deamon reloaded in shell manually"
-    ansible.builtin.command: systemctl deamon-reload
-
-  
+    ansible.builtin.shell: systemctl deamon-reload
   - name: catalogue service enable and start
     ansible.builtin.service:
       name: catalogue
-      state: started
       enabled: yes
+      state: started
+  - name: copy mongo.repo file to /etc/yum.repos.d/mongo.repo
+    ansible.builtin.copy:
+      src: mongo.repo
+      dest: /etc/yum.repos.d/mongo.repo   
+
+  
 
       
 
