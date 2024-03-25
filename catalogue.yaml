@@ -35,11 +35,6 @@
     ansible.builtin.copy:
        src: catalogue.service
        dest: /etc/systemd/system/catalogue.service
-  - name: "deamon reloaded in shell manually"
-    ansible.builtin.systemd_service:
-      name: catalogue
-      state: restarted
-      daemon_reload: true
   - name: "Checking service module again - "deamon reloaded in shell manually" "
     ansible.builtin.service:
       name: catalogue
