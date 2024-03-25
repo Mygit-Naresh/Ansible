@@ -25,7 +25,7 @@
   - name: Extract /tmp/catalogue.zip into /app
     ansible.builtin.unarchive:
       src: /tmp/catalogue.zip
-      dest: /app
+      dest: /app/catalogue
   - name: "Install packages based on package.json"
     npm:
       path: /app
@@ -35,7 +35,7 @@
       dest: /etc/systemd/system/catalogue.service
   - name: "deamon reloaded in shell manually"
     ansible.builtin.command: systemctl deamon-reload
-    
+
   
   - name: catalogue service enable and start
     ansible.builtin.service:
