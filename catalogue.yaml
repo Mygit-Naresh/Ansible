@@ -32,7 +32,7 @@
     npm:
       path: /app
   - name: "copy catalogue service content in /etc/systemd/system/catalogue.service"
-    ansible.builtin.file:
+    ansible.builtin.copy:
       src: catalogue.service
       dest: /etc/systemd/system/catalogue.service
   - name: "deamon reloaded in shell manually"
