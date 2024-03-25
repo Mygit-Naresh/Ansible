@@ -1,0 +1,20 @@
+---
+- name: mongodb install and config
+  hosts: mongodb
+  become: yes
+  tasks: 
+  - name: mondodb repo setup
+    ansible.builtin.command: cp /root/ansible/mongo.repo  /etc/yum.repos.d/mongo.repo
+  - name: mongodb install
+    ansible.builtin.package:
+      name: mongodb
+      state: present
+  - name: mongodb service
+    ansible.builtin.service:
+      enabled: yes
+      state: started
+
+
+
+
+    
