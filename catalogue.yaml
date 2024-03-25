@@ -1,4 +1,3 @@
----
 - name: catalogue service configuration
   hosts: catalogue
   become: yes
@@ -33,9 +32,9 @@
       path: /app
   - name: "copy catalogue service content in /etc/systemd/system/catalogue.service"
     ansible.builtin.copy:
-       src: catalogue.service
-       dest: /etc/systemd/system/catalogue.service
-  - name: "Checking service module again - "deamon reloaded in shell manually" "
+      src: catalogue.service
+      dest: /etc/systemd/system/catalogue.service
+  - name: Checking service module again deamon reloaded in shell manually
     ansible.builtin.service:
       name: catalogue
       enabled: yes
