@@ -17,6 +17,15 @@
       name: mongod
       enabled: yes
       state: started
+  - name: replace file
+    ansible.builtin.replace:
+      path: /etc/mongod.conf
+      regexp: '127.0.0.1'
+      replace: '0.0.0.0'
+  - name: mongodb service restart
+    ansible.builtin.service:
+      name: mongod
+      state: restarted
 
 
 
