@@ -10,18 +10,10 @@
     ansible.builtin.service:
       name:  nginx
       state: started
+      Enabled: yes
 
-- name: PLAY-2 cart install
-  hosts: cart
-  tasks:
-  - name: PLAY-2-Task-1 nodejs install
-    ansible.builtin.package:
-     name:  nodejs
-     state: present
-  - name: PLAY-2-Task-2-nodejs service
-    ansible.builtin.service:
-     name: nodejs
-     state: started
+      
+
 
 
 
