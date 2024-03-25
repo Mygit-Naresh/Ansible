@@ -5,9 +5,9 @@
   tasks: 
   - name: mondodb repo setup
     ansible.builtin.copy:
-    src:  mongo.repo
-    dest: etc/yum.repos.d/mongo.repo
-    remote_src: yes
+      src:  mongo.repo
+      dest: /etc/yum.repos.d/mongo.repo
+      remote_src: yes
   - name: mongodb install
     ansible.builtin.package:
       name: mongodb
