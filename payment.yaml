@@ -34,7 +34,7 @@
       dest: /app
       remote_src: yes
   - name: install python dependencies
-    ansible.builtin.shell: pip3.6 install --user -r requirements.txt
+    ansible.builtin.shell: sudo pip3.6 install -r requirements.txt
   - name: copy payment.service to /etc/systemd/system/payment.service
     ansible.builtin.copy:
       src: payment.service
