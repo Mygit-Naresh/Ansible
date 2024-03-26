@@ -36,7 +36,7 @@
   - name: install python dependencies
     - name: Install specified python requirements
       ansible.builtin.pip:
-      requirements: /app/requirements.txt
+        requirements:  /app/requirements.txt
   - name: copy payment.service to /etc/systemd/system/payment.service
     ansible.builtin.copy:
       src: payment.service
