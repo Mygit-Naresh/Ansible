@@ -60,7 +60,7 @@
     when: PRODUCT_COUNT.stdout == "0"
   - name: service enable and restart
     ansible.builtin.service:
-      name: mongodb
+      name: catalogue
       state: restarted
       enabled: yes
 
