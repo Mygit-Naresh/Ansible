@@ -34,8 +34,7 @@
       dest: /app
       remote_src: yes
   - name: install python dependencies
-    - name: Install specified python requirements
-      ansible.builtin.pip:
+    ansible.builtin.pip:
         requirements:  /app/requirements.txt
   - name: copy payment.service to /etc/systemd/system/payment.service
     ansible.builtin.copy:
