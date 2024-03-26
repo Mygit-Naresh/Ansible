@@ -1,3 +1,4 @@
+---
 - name: nginx install and configuration
   hosts: web
   #vars:
