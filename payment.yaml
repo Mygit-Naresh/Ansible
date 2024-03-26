@@ -1,6 +1,6 @@
 ---
 - name: payment service configuration with python
-  hosts:
+  hosts: payment
   become: yes
   tasks: 
   - name:  install packages python
