@@ -1,45 +1,45 @@
 - name: nginx install and configuration
   hosts: web
   #vars:
-    name: nginx
-    register: SOFTWARE
+    #name: nginx
+    #register: SOFTWARE
   become: true
   tasks:
    - name: nginx install module
      ansible.builtin.package:
-      name: nginx
-      state: present
+       name: nginx
+       state: present
    - name: nginx install enable and start service
      ansible.builtin.service:
-      name: nginx
-      state: started
-      enabled: yes  
+       name: nginx
+       state: started
+       enabled: yes  
    - name: Remove file (delete file)
      ansible.builtin.file:
-      path: /usr/share/nginx/html/*
-      state: absent
+       path: /usr/share/nginx/html/*
+       state: absent
    - name: Download url and get builds from s3
      ansible.builtin.get_url:
-      url: https://roboshop-builds.s3.amazonaws.com/web.zip
-      dest: /tmp/web.zip
-      mode: '0440'
+       url: https://roboshop-builds.s3.amazonaws.com/web.zip
+       dest: /tmp/web.zip
+       mode: '0440'
    - name: Extract /tmp/web.zip into /app
      ansible.builtin.unarchive:
-      src: /tmp/web.zip
-      dest: /usr/share/nginx/html
-      remote_src: yes
+       src: /tmp/web.zip
+       dest: /usr/share/nginx/html
+       remote_src: yes
    - name: Change the working directory /app
      ansible.builtin.command: 
      args:
-      chdir: /usr/share/nginx/html
+       chdir: /usr/share/nginx/html
    - name: Copy file 
      ansible.builtin.copy:
-      src: roboshiop.conf
-      dest: /etc/nginx/default.d/roboshop.conf
+       src: roboshop.conf
+       dest: /etc/nginx/default.d/roboshop.conf
    - name: nginx restart
      ansible.builtin.service:
-      name: nginx
-      state: restarted
+       name: nginx
+       state: restarted
     
       
      
