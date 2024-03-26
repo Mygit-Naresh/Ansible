@@ -53,7 +53,7 @@
       name: mongodb-org-shell
       state: present
   - name: get product count
-    ansible.builtin.command: mongodb --host mongodb.eternaltrainings.online --quite --eval 'db = db.getSiblingDB("catalogue"); db.products.count()'
+    ansible.builtin.command:  mongo --host mongodb.eternaltrainings.online --quiet --eval 'db = db.getSiblingDB("catalogue"); db.products.count()'
     register: PRODUCT_COUNT
   - name: connect to mongodb server and load schema
     ansible.builtin.command: mongo --host mongodb.eternaltrainings.online < /app/schema/catalogue.js
@@ -63,7 +63,7 @@
       name: mongodb
       state: restarted
       enabled: yes
-      
+
 
 
 
