@@ -29,7 +29,7 @@
        dest: /usr/share/nginx/html
        remote_src: yes
    - name: Change the working directory /app
-     ansible.builtin.command: 
+     ansible.builtin.command: cd
      args:
        chdir: /usr/share/nginx/html
    - name: Copy file 
