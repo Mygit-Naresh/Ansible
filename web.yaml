@@ -1,10 +1,10 @@
--  name: nginx install and configuration
-   hosts: web
-   vars:
+- name: nginx install and configuration
+  hosts: web
+  vars:
     name: nginx
     register: SOFTWARE
-   become: true
-   tasks:
+  become: true
+  tasks:
    - name: {{ SOFTWARE }} install module
      ansible.builtin.package:
       name: {{ SOFTWARE }}
