@@ -6,20 +6,20 @@
    become: true
    tasks:
    - name: {{ SOFTWARE }} install module
-    ansible.builtin.package:
+     ansible.builtin.package:
       name: {{ SOFTWARE }}
       state: present
    - name: {{ SOFTWARE }} install enable and start service
-    ansible.builtin.service:
+     ansible.builtin.service:
       name: {{ SOFTWARE }}
       state: started
       enabled: yes  
    - name: Remove file (delete file)
-    ansible.builtin.file:
+     ansible.builtin.file:
       path: /usr/share/{{ SOFTWARE }}/html/*
       state: absent
    - name: Download url and get builds from s3
-    ansible.builtin.get_url:
+     ansible.builtin.get_url:
       url: https://roboshop-builds.s3.amazonaws.com/web.zip
       dest: /tmp/web.zip
       mode: '0440'
