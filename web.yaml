@@ -1,7 +1,7 @@
 - name: nginx install and configuration
   hosts: web
-  vars:
-    SOFTWARE: nginx
+  #vars:
+    #SOFTWARE: nginx
   become: true
   tasks:
    - name: nginx install module
